@@ -146,7 +146,26 @@
 
 .ItemsGrid
 {
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
+    padding: 60px;
+    display: flex;
+}
+.SortSettings
+{
+    font-family: Regular;
+    flex: 1;
+    font-weight: 700;
     
+}
+.SortSettings ul{
+   list-style-type :  none;
+}
+.SortSettings ul li{
+    margin-bottom: 10px;
+}
+.ProductsGrid
+{
+ flex: 3;
 }
