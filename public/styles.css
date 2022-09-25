@@ -6,6 +6,7 @@
     font-family: Regular;
     src: url(./fonts/InterTight-Medium.ttf);
 }
+
 *
 {
     padding: 0;
@@ -14,7 +15,7 @@
 }
 .NavBar
 {
-    box-sizing: border-box;
+    
     width: 100%;
     height: 60px ;
     background-color:   black;
@@ -25,6 +26,7 @@
     padding: 0 30px 0 30px;
     position: fixed ;
     z-index: 200;
+    box-sizing: border-box;
     
 }
 .NavBar .Logo
@@ -61,33 +63,36 @@
     margin: 0 8px 0 8px;
 }
 /*----Carusel Styles ------------*/
+
+.MainContent {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px);
+    bottom: 0;
+}
 .SalesCarusel
 {
     
     width: 100%;
-    height: calc(100% - 60px);
-    position: absolute;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    bottom: 0;
     
-    
-    
-    
+
 }
 .Products
 {
-   box-sizing: border-box;
-    width:100vw;
+   
+    width:100%;
     height: 100%;
     display: flex;
-    overflow-y: hidden;
-    overflow-x: hidden; 
+     overflow-y: hidden;
+    overflow-x: hidden;  
 }
 .Products .Product {
-   
-    width: fit-content;
+    
+    width: 100%;
     height: 100%;
     position: relative;
 }
@@ -105,6 +110,7 @@
     top: 80px ;
     color: white;
     position: absolute;
+    
 }
 
 .CaruselButtons
@@ -116,6 +122,7 @@
     
 
 }
+
 .CaruselButt
 {
     transition: 0.5s;
@@ -125,6 +132,7 @@
     border: 3px solid white;
     margin: 0 5px 0 5px;
     z-index: 10;
+   
 }
 .CaruselButt.Active
 {
@@ -134,5 +142,11 @@
 {
     background-color: white;
 }
+/*-----------------------------------------------------*/
 
-
+.ItemsGrid
+{
+    width: 100%;
+    height: 100%;
+    
+}
