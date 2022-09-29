@@ -3,14 +3,42 @@ import { sales } from "../data";
 export default function Carusel()
 {
     const [ActiveProd, setActiveProd]=React.useState(0) ;
-    console.log(ActiveProd) ;
+    
     function  handleClick(id)
     {
-        setActiveProd(id)
+        setActiveProd(parseInt(id)) ;
     }
+    function ArrowClick(event)
+    {
+        switch (event.target.className) {
+            case "Arrow left":
+                setActiveProd(prevState=>(prevState===0)?sales.length-1:prevState-1)
+                break;
+            case "Arrow right":
+                setActiveProd(prevState=>(prevState===sales.length-1)?0:prevState+1)
+
+                break ;
+
+            default:
+                break;
+        }
+
+    }
+    function autoChange()
+    {
+        setActiveProd(prevState=>(prevState===sales.length-1)?0:prevState+1)
+    }
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            autoChange()
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
     
     return(
         <div className="SalesCarusel">
+            <div className="Arrow left" onClick={ArrowClick}>&#x2039;</div>
+            <div className="Arrow right" onClick={ArrowClick}>&#x203A;</div>
             <div className="Products">
                 {
                 sales.map(item=>{
@@ -48,7 +76,8 @@ export default function Carusel()
                 ))
                 }
             </div>
-
+            
         </div>
+        
     ) ;
 }
