@@ -61,7 +61,7 @@ export default function ItemsGrid()
                             <div className="ProdHover">
                                 <div className="addToCart">
                                     
-                                    <img src={CartIcon} alt="add to cart" />
+                                    <img src={CartIcon} alt="add to cart    " />
                                 </div>
                                 <div className="more">
                                     <div> More...</div>

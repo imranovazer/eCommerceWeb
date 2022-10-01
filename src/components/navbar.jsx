@@ -8,7 +8,10 @@ export default function Navbar()
     return(
 
         <div className="NavBar">
+            <Link to="/">
             <span className="Logo">BuyIt</span>
+            </Link>
+            
             <div className="Navigation">
                 <Link to="/">
                     Home
@@ -22,8 +25,13 @@ export default function Navbar()
                 
             </div>
             <div className="buttons">
-                <span class="material-symbols-outlined">shopping_cart </span>
-                <span class="material-symbols-outlined"> person</span>
+                    <span class="material-symbols-outlined">shopping_cart </span>
+
+                     <Link to="Login">
+                        <span class="material-symbols-outlined"> person</span>
+                    </Link>
+                
+                
             </div>
             
 
