@@ -42,7 +42,7 @@ const chartReducer = (chartElemetns = [], action) => {
     else return chartElemetns;
 }
 
-const numOfElementsInChart = (numberOfElemets = 0, action) => {
+const numOfElementsInChart = (numberOfElemets = 1, action) => {
     if (action.type === 'ADD_TO_CHART') {
 
         return numberOfElemets + 1;

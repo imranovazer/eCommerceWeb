@@ -37,7 +37,25 @@
     width: 60px;
     height: 60px;
 }
-.Chart .chart_products .product .productName
+.number
 {
-    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+   
 }
+.but
+{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+    
