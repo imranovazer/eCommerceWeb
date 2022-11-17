@@ -3,22 +3,20 @@ import { combineReducers } from "redux";
 
 const chartReducer = (chartElemetns = [], action) => {
     if (action.type === 'ADD_TO_CHART') {
-        const checkArray = chartElemetns.filter(e => e.id === action.payload.id
-        )
-        if (checkArray.length === 0) {
-            return [...chartElemetns, action.payload];
-        }
-        else if (checkArray.length >= 1) {
-            const index = chartElemetns.map((e, i) => {
-                if (e.id === checkArray[0].id) { return i };
+        var isExist = false;
+        chartElemetns.forEach(e => {
 
-            })
-            const newar = chartElemetns;
-            newar[index].number = newar[index].number + 1
-            return newar;
-
+            if (e.id === action.payload.id) {
+                isExist = true;
+            }
+        });
+        if (!isExist) {
+            return [...chartElemetns, action.payload]
         }
-        else return chartElemetns
+        else if (isExist) {
+            var newArray = chartElemetns;
+            return newArray.map(e => e.id === action.payload.id ? { ...e, number: e.number + 1 } : e);
+        }
 
     }
     else if (action.type = "DELETE_FROM_CHAR") {

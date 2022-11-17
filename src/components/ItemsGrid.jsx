@@ -65,7 +65,8 @@ const ItemsGrid=(props) =>
                                     id: item.id ,
                                     image : item.image.url,
                                     name : item.name ,
-                                    number : 1  
+                                    number : 1  ,
+                                    price:item.price.raw
                                 })}>
                                     
                                     <img src={CartIcon} alt="add to cart    " />

@@ -9,16 +9,25 @@ const Chart = (props)=>
         <div className="Chart">
             <div className="chart_products">
                 {
-                    props.products.map(e=>
+                     props.products.map(e=>
                         {
                             return( <div className="product">
                                     <div className="image">
                                         <img src={e.image}  />
                                     </div>
+                                    <div className="productName">
+                                        {e.name}
+                                    </div>
+                                    <div className="number">
+                                        Amount : {e.number}
+                                    </div>
+                                    <div className="price">
+                                        Total: {e.number*1*e.price}azn
+                                    </div>
                             </div>)
                         })
                 }
-                <div className="product"></div>
+                
             </div>
         </div>
     )
