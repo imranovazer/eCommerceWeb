@@ -1,0 +1,38 @@
+*
+{
+    box-sizing: border-box;
+}
+.Chart
+{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    
+    
+}
+.Chart .chart_products
+{
+    width: 80%;
+    height: 100%;
+    padding: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Chart .chart_products .product
+{
+    width: 80%;
+    height: 90px;
+    padding: 0 5% 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: rgba(99, 99, 99, 0.387) 0px 2px 8px 0px;
+}
+.Chart .chart_products .product .image img
+{
+    width: 60px;
+    height: 60px;
+}

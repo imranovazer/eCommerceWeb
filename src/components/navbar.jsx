@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect, Connect } from "react-redux";
+const url =require("url") ;
 
 
-export default function Navbar()
+
+
+const  Navbar=(props) =>
 {
-
+    
     return(
 
         <div className="NavBar">
@@ -25,7 +29,16 @@ export default function Navbar()
                 
             </div>
             <div className="buttons">
-                    <span class="material-symbols-outlined">shopping_cart </span>
+                    <Link to="Chart">
+                        <span class="material-symbols-outlined">
+                        
+                        shopping_cart 
+                        {props.numberOfElementsInChart>0 && <div className="ElementsNumber">
+                            {props.numberOfElementsInChart  }
+                        </div>}
+                    </span>
+                    </Link>
+                    
 
                      <Link to="Login">
                         <span class="material-symbols-outlined"> person</span>
@@ -38,3 +51,11 @@ export default function Navbar()
         </div>
     )
 }
+const  stateToProps = (state) =>
+{
+    return {
+        numberOfElementsInChart : state.numOfElementsInChart
+    }
+}
+
+export default connect(stateToProps)( Navbar) ;

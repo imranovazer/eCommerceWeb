@@ -1,16 +1,18 @@
 import axios from "axios";
 import React from "react";
 import CartIcon from "../icons/CartIcon.png"
+import {addToChart} from '../actions/index'
+import { connect, Connect } from "react-redux";
 
 import { commerce } from "../ecommerce";
-export default function ItemsGrid()
+const ItemsGrid=(props) =>
 {
    
     const [ActiveCat,SetActiveCat]=React.useState("1") ;
     const [Products,setProducts] =React.useState() ;
-    console.log(Products) ;
     
     
+
     
     function clickHandler(event)
     {
@@ -59,7 +61,12 @@ export default function ItemsGrid()
                         <div className="ProdImg">
                             <img src={item.image.url} alt="" />
                             <div className="ProdHover">
-                                <div className="addToCart">
+                                <div className="addToCart" onClick={()=>props.addToChart({
+                                    id: item.id ,
+                                    image : item.image.url,
+                                    name : item.name ,
+                                    number : 1  
+                                })}>
                                     
                                     <img src={CartIcon} alt="add to cart    " />
                                 </div>
@@ -90,3 +97,9 @@ export default function ItemsGrid()
         </div>
     ) ;
 }
+const stateToProps = (state) =>
+{
+   console.log(state)
+    
+}
+export default  connect(stateToProps,{addToChart})(ItemsGrid) ;
