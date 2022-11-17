@@ -19,7 +19,16 @@ const Chart = (props)=>
                                         {e.name}
                                     </div>
                                     <div className="number">
-                                        Amount : {e.number}
+                                        Amount : 
+                                        <button onClick={()=>props.deleteFromChart(e.id)}>-</button>
+                                         {e.number}
+                                         <button onClick={()=>props.addToChart({
+                                            id: e.id ,
+                                            image : e.image.url,
+                                            name : e.name ,
+                                            number : 1  ,
+                                            price:e.price.raw
+                                })}>+</button>
                                     </div>
                                     <div className="price">
                                         Total: {e.number*1*e.price}azn

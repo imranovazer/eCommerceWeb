@@ -21,9 +21,23 @@ const chartReducer = (chartElemetns = [], action) => {
     }
     else if (action.type = "DELETE_FROM_CHAR") {
 
-        const newArray = chartElemetns.filter(e => e.id !== action.payload.id
-        )
-        return newArray
+        var number = 0;
+        chartElemetns.forEach(e => {
+
+            if (e.id === action.payload) {
+                number = e.number;
+            }
+        });
+        if (number === 1) {
+            return chartElemetns.filter(e => e.id !== action.payload)
+        }
+        else if (number > 1) {
+
+            return chartElemetns.map(e => e.id === action.payload ? { ...e, number: e.number - 1 } : e);
+        }
+        else {
+            return chartElemetns
+        }
     }
     else return chartElemetns;
 }
@@ -32,6 +46,9 @@ const numOfElementsInChart = (numberOfElemets = 0, action) => {
     if (action.type === 'ADD_TO_CHART') {
 
         return numberOfElemets + 1;
+    }
+    else if (action.type === 'DELETE_FROM_CHAR') {
+        return numberOfElemets - 1;
     }
     else return numberOfElemets;
 }
